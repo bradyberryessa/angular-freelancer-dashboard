@@ -7,8 +7,8 @@ import { Proposal } from './proposal';
   templateUrl: 'proposal-list.component.html',
 })
 export class ProposalListComponent {
-  proposalOne: Proposal = new Proposal(15, "ABC Company", "http://bradyberryessa.com", "Angular 2", 150, 120, 15, "brady.berryessa@gmail.com"),
-  proposalTwo: Proposal = new Proposal(99, "XYZ Company", "http://bradyberryessa.com", "Angular 2", 150, 120, 15, "brady.berryessa@gmail.com"),
+  proposalOne: Proposal = new Proposal(15, "ABC Company", "http://bradyberryessa.com", "Angular 2", 150, 120, 15, "brady.berryessa@gmail.com")
+  proposalTwo: Proposal = new Proposal(99, "XYZ Company", "http://bradyberryessa.com", "Angular 2", 150, 120, 15, "brady.berryessa@gmail.com")
   proposalThree: Proposal = new Proposal(300, "Something Company", "http://bradyberryessa.com", "Angular 2", 150, 120, 15, "brady.berryessa@gmail.com")
 
   proposals: Proposal[] = [
