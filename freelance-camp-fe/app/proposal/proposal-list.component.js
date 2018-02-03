@@ -24,6 +24,7 @@ var ProposalListComponent = /** @class */ (function () {
             moduleId: module.id,
             selector: 'proposal-list',
             templateUrl: 'proposal-list.component.html',
+            styleUrls: ['proposal-list-component.css']
         })
     ], ProposalListComponent);
     return ProposalListComponent;
