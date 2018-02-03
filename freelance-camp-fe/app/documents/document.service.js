@@ -16,6 +16,7 @@ var DocumentService = /** @class */ (function () {
     // The constructor will create our connection with http
     function DocumentService(http) {
         this.http = http;
+        this.documentsUrl = 'http://localhost:3001/freelance_documents.json';
     }
     DocumentService.prototype.getDocuments = function () {
         return this.http.get(this.documentsUrl)

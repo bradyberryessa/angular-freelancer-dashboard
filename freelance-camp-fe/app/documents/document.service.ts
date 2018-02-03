@@ -5,9 +5,9 @@ import { Observable } from 'rxjs/Rx';
 import { Document } from './document';
 
 @Injectable()
-export class DocumentService{
-  private documentsUrl: 'http://localhost:3001/freelance_documents.json'
-// The constructor will create our connection with http
+export class DocumentService {
+  private documentsUrl = 'http://localhost:3001/freelance_documents.json';
+  // The constructor will create our connection with http
   constructor(
     private http: Http
   ) {}
