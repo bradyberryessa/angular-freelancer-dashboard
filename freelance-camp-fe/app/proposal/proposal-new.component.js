@@ -17,6 +17,7 @@ var ProposalNewComponent = /** @class */ (function () {
             moduleId: module.id,
             selector: 'proposal-new',
             templateUrl: 'proposal-new.component.html',
+            styleUrls: ['proposal-new.component.css']
         })
     ], ProposalNewComponent);
     return ProposalNewComponent;
