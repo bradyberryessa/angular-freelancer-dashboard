@@ -14,7 +14,9 @@ var AppComponent = /** @class */ (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'app',
-            templateUrl: 'app.component.html'
+            templateUrl: 'app.component.html',
+            // TemplateUrl has only one arguement while StyleUrls has multiple. Therefore it has to be an array.
+            styleUrls: ['app.component.css']
         })
     ], AppComponent);
     return AppComponent;
