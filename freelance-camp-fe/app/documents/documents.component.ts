@@ -1,35 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 import { Document } from './document';
+import { DocumentService } from './document.service';
 
-@Component ({
+@Component({
   moduleId: module.id,
   selector: 'documents',
   templateUrl: 'documents.component.html',
-  styleUrls: ['documents.component.css']
+  styleUrls: ['documents.component.css'],
+  providers: [ DocumentService ]
 })
-export class DocumentsComponent {
+export class DocumentsComponent implements OnInit {
   pageTitle: string = "Document Dashboard"
-  documents: Document[] = [
-    {
-      title: "My first Doc",
-      description: "Sample Data",
-      file_url: "http://google.com",
-      updated_at: "2/1/2018",
-      image_url: "https://media.licdn.com/mpr/mpr/AAIA_wDGAAAAAQAAAAAAAAmaAAAAJDZkMDI3MzNjLWEwY2UtNDBkZC1iMjFkLWI1MzFjNWQ1Zjk2YQ.jpg"
-    },
-    {
-      title: "My second Doc",
-      description: "Sample Data",
-      file_url: "http://google.com",
-      updated_at: "2/1/2018",
-      image_url: "https://media.licdn.com/mpr/mpr/AAIA_wDGAAAAAQAAAAAAAAmaAAAAJDZkMDI3MzNjLWEwY2UtNDBkZC1iMjFkLWI1MzFjNWQ1Zjk2YQ.jpg"
-    },
-    {
-      title: "My last Doc",
-      description: "Sample Data",
-      file_url: "http://google.com",
-      updated_at: "2/1/2018",
-      image_url: "https://media.licdn.com/mpr/mpr/AAIA_wDGAAAAAQAAAAAAAAmaAAAAJDZkMDI3MzNjLWEwY2UtNDBkZC1iMjFkLWI1MzFjNWQ1Zjk2YQ.jpg"
-    }
-  ]
-} 
+  documents: Document[];
+  errorMessage: string;
+  mode = "Observable";
+
+  constructor(
+    private documentService: DocumentService;
+  ) {}
+
+  ngOnInit() {
+    let timer = Observable.timer(0, 5000);
+    timer.subscribe(() => this.getDocuments());
+  }
+
+  getDocuments() {
+    this.documentService.getDocuments()
+        .subscribe(
+          documents => this.documents = documents,
+          error => this.errorMessage = <any>error
+        );
+  }
+}
