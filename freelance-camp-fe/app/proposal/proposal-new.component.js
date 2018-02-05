@@ -23,9 +23,9 @@ var ProposalNewComponent = /** @class */ (function () {
         this.submitted = true;
         this.proposalService.createProposal(proposal)
             .subscribe(function (data) { return true; }, function (error) {
-            return console.log("Error saving proposal");
+            console.log("Error saving proposal");
+            return Rx_1.Observable.throw(error);
         });
-        return Rx_1.Observable.throw(error);
     };
     ProposalNewComponent = __decorate([
         core_1.Component({
